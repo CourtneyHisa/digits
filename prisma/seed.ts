@@ -1,6 +1,7 @@
 import { PrismaClient, Role, Condition } from '@prisma/client';
 import { hash } from 'bcrypt';
 import * as config from '../config/settings.development.json';
+import { Contact } from '@/lib/validationSchemas';
 
 const prisma = new PrismaClient();
 
@@ -36,6 +37,24 @@ async function main() {
       },
     });
   }
+  // for (const contacts of config.defaultContacts) {
+  config.defaultContacts.forEach(async (contacts, index) => {
+    // const condition = data.condition as Condition || Condition.good;
+    console.log(`  Adding stuff: ${JSON.stringify(contacts)}`);
+    // eslint-disable-next-line no-await-in-loop
+    await prisma.contact.upsert({
+      where: { id: config.defaultContacts.indexOf(contacts) + 1 },
+      update: {},
+      create: {
+        firstName: contacts.firstName,
+        lastName: contacts.lastName,
+        address: contacts.address,
+        image: contacts.image,
+        description: contacts.description,
+        owner: contacts.owner,
+      },
+    });
+  });
 }
 main()
   .then(() => prisma.$disconnect())
