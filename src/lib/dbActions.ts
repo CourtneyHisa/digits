@@ -1,6 +1,6 @@
 'use server';
 
-import { Condition, Contact } from '@prisma/client';
+import { Contact } from '@prisma/client';
 import { hash } from 'bcrypt';
 import { redirect } from 'next/navigation';
 import { prisma } from './prisma';
