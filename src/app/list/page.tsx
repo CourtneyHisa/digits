@@ -6,7 +6,7 @@ import ContactCard from '@/components/ContactCard';
 import { prisma } from '@/lib/prisma';
 import { Contact } from '@prisma/client';
 
-/** Render a list of stuff for the logged in user. */
+/** Render a list of contacts for the logged in user. */
 const ListPage = async () => {
   // Protect the page, only logged in users can access it.
   const session = await getServerSession(authOptions);
@@ -22,7 +22,11 @@ const ListPage = async () => {
       owner,
     },
   });
-  const notes = await prisma.note.findMany({});
+  const notes = await prisma.note.findMany({
+    where: {
+      owner,
+    },
+  });
   console.log(contacts);
   return (
     <main>
@@ -32,16 +36,6 @@ const ListPage = async () => {
           <Row xs={1} md={2} lg={3} className="g-4">
             {contacts.map((contact) => (
               <Col key={`Contact-${contact.firstName}`}>
-
-                {/* <ContactCard
-                  id={contact.id}
-                  firstName={contact.firstName}
-                  lastName={contact.lastName}
-                  address={contact.address}
-                  image={contact.image}
-                  description={contact.description}
-                  owner={contact.owner}
-                /> */}
                 <ContactCard
                   contact={contact}
                   notes={notes.filter(note => (note.contactId === contact.id))}
