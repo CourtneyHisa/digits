@@ -16,11 +16,9 @@ export default async function EditContactPage({ params }: { params: { id: string
     } | null,
   );
   const id = Number(Array.isArray(params?.id) ? params?.id[0] : params?.id);
-  // console.log(id);
   const contact: Contact | null = await prisma.contact.findUnique({
     where: { id },
   });
-  // console.log(stuff);
   if (!contact) {
     return notFound();
   }

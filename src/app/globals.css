@@ -44,6 +44,10 @@ footer, footer a {
   color: var(--nat-navbar-text-color);
 }
 
+* {
+  color: white; /* Or any other color value */
+}
+
 /* html,
 body {
   --bs-light-rgb: 236, 236, 236;
