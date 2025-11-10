@@ -7,7 +7,7 @@ import { PeopleFill, FileEarmarkTextFill, Calendar2CheckFill } from 'react-boots
 const Home = () => (
   <main>
     <Container id="landing-page" className="py-3">
-      <Row className="align-middle text-center">
+      <Row className="align-middle text-center white">
         <Col>
           <PeopleFill size={100} />
           <h1>Multiple Users</h1>
