@@ -53,6 +53,7 @@ const AddContactForm: React.FC = () => {
                     type="text"
                     {...register('firstName')}
                     className={`form-control ${errors.firstName ? 'is-invalid' : ''}`}
+                    placeholder="ex. John"
                   />
                   <div className="invalid-feedback">{errors.firstName?.message}</div>
                 </Form.Group>
@@ -62,6 +63,7 @@ const AddContactForm: React.FC = () => {
                     type="text"
                     {...register('lastName')}
                     className={`form-control ${errors.lastName ? 'is-invalid' : ''}`}
+                    placeholder="ex. Smith"
                   />
                   <div className="invalid-feedback">{errors.lastName?.message}</div>
                 </Form.Group>
@@ -71,6 +73,7 @@ const AddContactForm: React.FC = () => {
                     type="text"
                     {...register('address')}
                     className={`form-control ${errors.address ? 'is-invalid' : ''}`}
+                    placeholder="ex. 123 Main St, City, State"
                   />
                   <div className="invalid-feedback">{errors.address?.message}</div>
                 </Form.Group>
@@ -80,6 +83,7 @@ const AddContactForm: React.FC = () => {
                     type="text"
                     {...register('image')}
                     className={`form-control ${errors.image ? 'is-invalid' : ''}`}
+                    placeholder="Image URL"
                   />
                   <div className="invalid-feedback">{errors.image?.message}</div>
                 </Form.Group>
@@ -88,7 +92,7 @@ const AddContactForm: React.FC = () => {
                   <Form.Control
                     as="textarea"
                     className={`form-control ${errors.description ? 'is-invalid' : ''}`}
-                    placeholder="A bit about you"
+                    placeholder="A bit about the contact"
                     {...register('description')}
                   />
                   <div className="invalid-feedback">{errors.description?.message}</div>

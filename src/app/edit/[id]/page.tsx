@@ -24,7 +24,7 @@ export default async function EditContactPage({ params }: { params: { id: string
   }
 
   return (
-    <main>
+    <main className="white">
       <EditContactForm contact={contact} />
     </main>
   );

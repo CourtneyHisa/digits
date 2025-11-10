@@ -12,7 +12,7 @@ const AddContact = async () => {
     } | null,
   );
   return (
-    <main>
+    <main className="white">
       <AddContactForm />
     </main>
   );

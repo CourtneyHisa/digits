@@ -32,7 +32,7 @@ const ListPage = async () => {
     <main>
       <Container id="list" fluid className="py-3">
         <Row>
-          <h1 className="text-center">List Contacts</h1>
+          <h1 className="text-center white">List Contacts</h1>
           <Row xs={1} md={2} lg={3} className="g-4">
             {contacts.map((contact) => (
               <Col key={`Contact-${contact.firstName}`}>

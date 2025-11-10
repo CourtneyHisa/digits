@@ -48,12 +48,12 @@ const SignUp = () => {
       <Container>
         <Row className="justify-content-center">
           <Col xs={5}>
-            <h1 className="text-center">Sign Up</h1>
+            <h1 className="text-center white">Sign Up</h1>
             <Card>
               <Card.Body>
                 <Form onSubmit={handleSubmit(onSubmit)}>
                   <Form.Group className="form-group">
-                    <Form.Label>Email</Form.Label>
+                    <Form.Label className="text-dark">Email</Form.Label>
                     <input
                       type="text"
                       {...register('email')}
@@ -63,7 +63,7 @@ const SignUp = () => {
                   </Form.Group>
 
                   <Form.Group className="form-group">
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label className="text-dark">Password</Form.Label>
                     <input
                       type="password"
                       {...register('password')}
@@ -72,7 +72,7 @@ const SignUp = () => {
                     <div className="invalid-feedback">{errors.password?.message}</div>
                   </Form.Group>
                   <Form.Group className="form-group">
-                    <Form.Label>Confirm Password</Form.Label>
+                    <Form.Label className="text-dark">Confirm Password</Form.Label>
                     <input
                       type="password"
                       {...register('confirmPassword')}
